@@ -1,5 +1,5 @@
 import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+import  "chart.js/auto";
 import { nanoid } from "nanoid"
 import pieColors from "../functions/PieColors";
 

@@ -1,5 +1,5 @@
 {
-  "name": "spolify",
+  "name": "spotify-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
