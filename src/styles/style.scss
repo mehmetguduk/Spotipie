@@ -84,7 +84,7 @@ main.graph-container {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 40px 20px;
+    padding: 50px 20px ;
 
     div.result-container {
         div.pie-container {
@@ -185,6 +185,8 @@ footer.copyright {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 10px;
 
     p.copyright-text {
         font-size: 13px;
@@ -240,6 +242,6 @@ footer.copyright {
 @media only screen and (max-width: 450px) {
     main.graph-container {
         width: 90% !important;
-        padding: 40px 0 !important;
+        padding: 50px 0 !important;
     }
 }
