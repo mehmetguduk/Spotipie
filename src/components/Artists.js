@@ -109,6 +109,7 @@ export default function Artists({ token }) {
                             return Math.round((value / total) * 100) / 100;
                         }),
                         backgroundColor: pieColors,
+                        borderColor: "#f3f3f3",
                         radius: "100%",
                         borderWidth: 2,
                         borderRadius: 10,
