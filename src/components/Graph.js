@@ -1,9 +1,17 @@
+/*
+    THIS FILE WAS DEVELOPED BY MEHMET GUDUK
+    © 2022 COPYRIGHT, LICENSED WITH GPL-3.0 LICENSE, AUTHOR IS MEHMET GUDUK
+    https://github.com/mehmetguduk
+*/
+
 import { Pie } from "react-chartjs-2";
-import  "chart.js/auto";
 import { nanoid } from "nanoid"
-import pieColors from "../functions/PieColors";
+import "chart.js/auto";
+import pieColors from "../utils/PieColors";
 
 export default function Graph({ data, artistGenres, labels }) {
+
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ VARIABLES @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     const options = {
         plugins: {
@@ -33,7 +41,7 @@ export default function Graph({ data, artistGenres, labels }) {
         }
     }
 
-    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ ELEMENTS @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     const pieLabels = labels.map((label, index) => {
         return (
@@ -59,7 +67,7 @@ export default function Graph({ data, artistGenres, labels }) {
         )
     })
 
-    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ RETURNS @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     return (
         <div className="result-container">

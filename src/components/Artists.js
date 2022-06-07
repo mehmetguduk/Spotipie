@@ -1,8 +1,16 @@
+/*
+    THIS FILE WAS DEVELOPED BY MEHMET GUDUK
+    © 2022 COPYRIGHT, LICENSED WITH GPL-3.0 LICENSE, AUTHOR IS MEHMET GUDUK
+    https://github.com/mehmetguduk
+*/
+
 import React from 'react'
-import pieColors from '../functions/PieColors';
+import pieColors from '../utils/PieColors';
 import Graph from './Graph';
 
 export default function Artists({ token }) {
+
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ STATES @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     const axios = require("axios");
     const [artistGenres, setArtistGenres] = React.useState([]);
@@ -10,27 +18,31 @@ export default function Artists({ token }) {
     const [isMounted, setIsMounted] = React.useState(false);
     const [labels, setLabels] = React.useState({})
 
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ FUNCTIONS @@@@@@@@@@@@@@@@@@@@@@@@ */
 
-    const indexOfMax = (arr) => {
-        if (arr.length === 0) {
+    function indexOfMax(array) {
+        if (array.length === 0) {
             return -1;
         }
-        let max = arr[0];
+        let max = array[0];
         let maxIndex = 0;
-        for (let i = 1; i < arr.length; i++) {
-            if (arr[i] > max) {
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] > max) {
                 maxIndex = i;
-                max = arr[i];
+                max = array[i];
             }
         }
         return maxIndex;
     }
 
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ EFFECTS @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     React.useEffect(() => {
         const getTopArtists = async (token) => {
 
-            var topArtists = [];
+            /*///////////////////////////////*/
+
+            let topArtists = [];
 
             const headers = {
                 "Authorization": "Bearer " + token
@@ -39,7 +51,7 @@ export default function Artists({ token }) {
                 topArtists = response.data.items;
             })
 
-            const currArtistsToGenres = topArtists.map((artist, index) => {
+            const currArtistsToGenres = topArtists.map((artist) => {
                 const name = artist.name
                 const genres = artist.genres
                 const imageUrl = artist.images[0].url
@@ -54,9 +66,9 @@ export default function Artists({ token }) {
 
             setArtistGenres(currArtistsToGenres);
 
-            /*///////////////////////////////////////////////////////////////////////////////////////////////*/
+            /*///////////////////////////////*/
 
-            const unorganizedGenres = topArtists.map((artist, index) => {
+            const unorganizedGenres = topArtists.map((artist) => {
                 const genreArr = artist.genres;
                 return genreArr;
             })
@@ -98,7 +110,7 @@ export default function Artists({ token }) {
 
             const total = Object.values(finalObj).reduce((partialSum, a) => partialSum + a, 0);
 
-            /*///////////////////////////////////////////////////////////////////////////////////////////////*/
+            /*///////////////////////////////*/
 
             let newData = {
                 labels: Object.keys(finalObj),
@@ -123,7 +135,7 @@ export default function Artists({ token }) {
         getTopArtists(token);
     }, [axios, token])
 
-
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ RETURN @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     return (
         <main className='graph-container'>
