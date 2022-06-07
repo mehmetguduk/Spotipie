@@ -5,8 +5,8 @@
 */
 
 import React from "react";
-import { authEndpoint, clientId, redirectUri, scopes } from "./functions/Config";
-import hash from "./functions/Hash";
+import { authEndpoint, clientId, redirectUri, scopes } from "./utils/Config";
+import hash from "./utils/Hash";
 import Artists from "./components/Artists";
 import "./styles/style.scss"
 
