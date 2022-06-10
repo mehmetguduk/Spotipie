@@ -19,8 +19,8 @@ function App() {
         <div className="App">
             {!token ?
                 <main className="intro-container">
-                    <h1 className="title">Spotify Tracker</h1>
-                    <p className="description">Spotify Tracker is a web application that see the music genres and artists you listen to the most on Spotify.</p>
+                    <h1 className="title">Spotipie</h1>
+                    <p className="description">Spotipie is a web application that see the music genres and artists you listen to the most on Spotify.</p>
                     <a className="spotify-button" href={authLink}>
                         <i className="spotify-logo fa fa-spotify" aria-hidden="true"></i>
                         Login with Spotify
