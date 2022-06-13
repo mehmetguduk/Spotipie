@@ -117,7 +117,7 @@ export default function Artists({ token }) {
             setIsMounted(true);
         }
         getTopArtists(token);
-    }, [axios, token])
+    }, [token])
 
     /* @@@@@@@@@@@@@@@@@@@@@@@@ RETURN @@@@@@@@@@@@@@@@@@@@@@@@ */
 
