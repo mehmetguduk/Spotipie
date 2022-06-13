@@ -21,8 +21,8 @@ export default function Graph({ data, artistGenres, labels }) {
             tooltip: {
                 callbacks: {
                     label: function (context) {
-                        var initialLabel = ` ${context.label.toUpperCase()} : `
-                        var artists = [];
+                        let initialLabel = ` ${context.label.toUpperCase()} : `
+                        let artists = [];
                         artistGenres.map((artist) => {
                             if (artist.genres.includes(context.label)) {
                                 artists.push(artist.artistName);
