@@ -19,6 +19,23 @@ export default function Artists({ token }) {
     const [isMounted, setIsMounted] = React.useState(false);
     const [labels, setLabels] = React.useState({})
 
+    /* @@@@@@@@@@@@@@@@@@@@@@@@ FUNCTIONS @@@@@@@@@@@@@@@@@@@@@@@@ */
+
+    function indexOfMax(array) {
+        if (array.length === 0) {
+            return -1;
+        }
+        let max = array[0];
+        let maxIndex = 0;
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                maxIndex = i;
+                max = array[i];
+            }
+        }
+        return maxIndex;
+    }
+
     /* @@@@@@@@@@@@@@@@@@@@@@@@ EFFECTS @@@@@@@@@@@@@@@@@@@@@@@@ */
 
     React.useEffect(() => {
@@ -77,7 +94,7 @@ export default function Artists({ token }) {
             let finalArr = [];
 
             while (a !== 20 && keys.length !== 0) {
-                let currIndex = vals.length - 1;
+                let currIndex = indexOfMax(vals);
                 finalArr.push(keys[currIndex]);
                 keys.splice(currIndex, 1);
                 vals.splice(currIndex, 1);
